@@ -1,0 +1,12 @@
+Home
+
+<% if user_signed_in? %>
+  User signned in
+  <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<% else %>
+<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.password_field :password %>
+  <%= f.submit 'Sign in' %>
+<% end %>
+<% end %>
