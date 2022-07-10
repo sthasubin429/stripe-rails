@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   root "home#index"
   resources :user
   get "card", to: "card#index"
+  post "card/card_form_submit", to: "card#card_form_submit"
 
 end
